@@ -55,13 +55,13 @@ h2{font-weight:700;font-size:64px;line-height:1.1;color:var(--g);text-shadow:0 2
 @keyframes swing{from{opacity:0;transform:translateY(-300px) rotate(var(--r))}to{opacity:1;transform:rotate(var(--s))}}
 .mark{background:linear-gradient(120deg,#8bd45a,#b6ea7d);border-radius:60px;padding:6px 80px;font-size:76px;font-weight:700;color:var(--g)}
 /* stats */
-.stat{position:absolute;width:480px;height:290px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.stat{position:absolute;width:480px;height:310px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .stat b{font-size:130px;line-height:1;font-weight:700}
 .stat span{font-size:34px;font-weight:500;line-height:1.3}
 /* what is */
 .step{position:absolute;display:flex;align-items:center;gap:28px;padding:22px 44px 22px 26px;border-radius:70px}
 .step em{flex:none;width:76px;height:76px;border-radius:50%;background:var(--g);color:#fff;font:700 40px/76px var(--f);text-align:center}
-.step strong{display:block;font-size:38px;font-weight:600}.step small{display:block;font-size:26px;font-weight:400;opacity:.85;margin-top:4px}
+.step strong,.step small{display:block;font-size:29px;font-weight:700;line-height:1.35}.step small{margin-top:2px}
 /* demo */
 .hand{position:absolute;left:0;top:90px;height:820px}
 .screen{position:absolute;left:316px;top:108px;width:262px;height:590px;border-radius:28px;overflow:hidden;padding:46px 12px 0;display:flex;flex-direction:column;gap:12px;font-size:18px}
@@ -102,7 +102,7 @@ h2{font-weight:700;font-size:64px;line-height:1.1;color:var(--g);text-shadow:0 2
 .grid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 2px,transparent 2px);background-size:44px 44px;animation:pan 24s linear infinite}
 @keyframes pan{to{background-position:44px 44px}}
 .dt{position:absolute;top:300px;width:600px;font:700 310px/1 var(--f);background:linear-gradient(90deg,#7fd34a,#c2ea78);-webkit-background-clip:text;background-clip:text;color:transparent}
-.phone{position:absolute;left:630px;top:60px;width:340px;height:790px;border-radius:56px;background:#fff;border:13px solid #14181a;box-shadow:0 0 0 3px #3b4244,0 40px 90px rgba(0,0,0,.55);overflow:hidden}
+.phone{position:absolute;left:600px;top:25px;width:400px;height:850px;border-radius:54px;background:#fff;border:13px solid #14181a;box-shadow:0 0 0 3px #3b4244,0 40px 90px rgba(0,0,0,.55);overflow:hidden}
 .notch{position:absolute;z-index:2;top:0;left:50%;width:140px;height:30px;margin-left:-70px;background:#14181a;border-radius:0 0 20px 20px}
 .pscreen{position:absolute;inset:0;padding:0 14px;display:flex;flex-direction:column;gap:14px;font-size:20px;background:#f4f7f4}
 .lh{margin:0 -14px 8px;padding:46px 0 12px;text-align:center;background:#fff;font-weight:600;font-size:22px;border-bottom:1px solid #e1e8e1}
@@ -120,6 +120,108 @@ h2{font-weight:700;font-size:64px;line-height:1.1;color:var(--g);text-shadow:0 2
 .ln::after{content:"";position:absolute;right:-3px;top:-8px;border-left:14px solid #8bd45a;border-top:10px solid transparent;border-bottom:10px solid transparent}
 .ln i{position:absolute;top:-5px;left:0;width:14px;height:14px;border-radius:50%;background:#c2ea78;box-shadow:0 0 14px #8bd45a;animation:run 2s linear infinite;animation-delay:2.4s;opacity:0}
 @keyframes run{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:calc(100% - 14px);opacity:0}}
+.step{left:200px;width:1200px;height:140px}
+.vline{position:absolute;left:264px;top:200px;width:6px;height:600px;background:var(--lime);border-radius:3px;transform:scaleY(0);transform-origin:top}
+.on .vline{animation:sy 1.8s ease .5s forwards}
+@keyframes sy{to{transform:scaleY(1)}}
+.cp{position:absolute;left:150px;top:150px;width:1300px;height:700px;background:rgba(255,255,255,.78)}
+.gl{position:absolute;left:190px;width:1220px;height:2px;background:rgba(31,58,36,.13)}.gl.base{height:5px;background:var(--g);border-radius:3px}
+.bar{position:absolute;bottom:122px;width:280px;padding-top:26px;text-align:center;color:#fff;border-radius:22px 22px 0 0;clip-path:inset(100% 0 0 0)}
+.on .bar{animation:rev 1.5s cubic-bezier(.2,.9,.3,1) forwards;animation-delay:calc(var(--d)*.6s + .6s)}
+@keyframes rev{to{clip-path:inset(0)}}
+.bar::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 96px,rgba(0,0,0,.16) 96px 100px)}
+.bar::after{content:"";position:absolute;top:0;bottom:0;left:18%;width:10%;background:rgba(255,255,255,.18);filter:blur(6px)}
+.bar small{display:block;font-size:26px;font-weight:500;position:relative;z-index:1}.bar b{display:block;font-size:88px;line-height:1.1;font-weight:700;position:relative;z-index:1}.bar span{font-size:28px;position:relative;z-index:1}
+.b1{height:480px;background:linear-gradient(180deg,#78c653,#2d7536)}.b2{height:368px;background:linear-gradient(180deg,#f4a43c,#cf4128)}
+.yr{position:absolute;top:792px;width:280px;text-align:center;font-size:42px;font-weight:700}
+.dl{position:absolute;left:584px;top:300px;width:256px;border-top:4px dashed #b3361f;transform:scaleX(0);transform-origin:left}
+.on .dl{animation:grow .6s ease 2.7s forwards}
+.ar{position:absolute;left:837px;top:300px;width:6px;height:96px;background:#b3361f;transform:scaleY(0);transform-origin:top}
+.ar::after{content:"";position:absolute;left:-12px;bottom:-16px;border-top:20px solid #b3361f;border-left:15px solid transparent;border-right:15px solid transparent}
+.on .ar{animation:sy .5s ease 3.2s forwards}
+.drop{text-align:center;width:420px}.drop span{display:block;font-size:44px;font-weight:600;color:#b3361f}.drop b{display:block;font-size:150px;line-height:1;font-weight:700;color:#b3361f}.drop em{display:block;font-style:normal;font-size:28px;font-weight:500;margin-top:6px}
+.drop b::before{content:"▼";font-size:60px;vertical-align:middle;margin-right:8px}
+.nd{position:absolute;border-radius:24px;background:rgba(255,255,255,.08);border:2px solid rgba(139,212,90,.55);color:#fff;text-align:center;padding:30px 14px 0;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.on .nd{animation-name:pop,glow;animation-duration:.9s,3s;animation-iteration-count:1,infinite;animation-delay:calc(var(--d)*.15s + .35s),calc(var(--d)*.15s + 1.6s)}
+@keyframes glow{50%{box-shadow:0 0 0 0 rgba(139,212,90,0),0 0 34px 4px rgba(139,212,90,.28)}}
+.nd .n{position:absolute;left:-14px;top:-14px;width:46px;height:46px;border-radius:50%;background:var(--lime);color:#143019;font:700 25px/46px var(--f)}
+.nd h3{font-size:30px;font-weight:600;line-height:1.25}.nd small{display:block;color:var(--lime);font-size:25px;margin-top:10px}
+.nd.br{border-style:dashed;padding-top:26px}.nd.br h3{font-size:28px}
+.hl,.vl,.hb{position:absolute;background:rgba(139,212,90,.4);border-radius:2px}
+.hl{height:4px;transform:scaleX(0);transform-origin:left}.vl{width:4px;transform:scaleY(0);transform-origin:top}.hb{height:4px;transform:scaleX(0)}
+.on .hl,.on .hb{animation:grow .6s ease both;animation-delay:calc(var(--d)*.15s + .35s)}
+.on .vl{animation:sy .5s ease both;animation-delay:calc(var(--d)*.15s + .35s)}
+.hl::after{content:"";position:absolute;right:-3px;top:-8px;border-left:14px solid #8bd45a;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.vl::after{content:"";position:absolute;left:-8px;bottom:-3px;border-top:14px solid #8bd45a;border-left:10px solid transparent;border-right:10px solid transparent}
+.hl i,.vl i{position:absolute;width:14px;height:14px;border-radius:50%;background:#c2ea78;box-shadow:0 0 14px #8bd45a;opacity:0}
+.hl i{top:-5px;left:0;animation:run 2s linear infinite 3.2s}.vl i{left:-5px;top:0;animation:runy 1.6s linear infinite 3.8s}
+@keyframes runy{0%{top:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:calc(100% - 14px);opacity:0}}
+.tt{font-size:32px;font-weight:600;color:var(--lime)}
+.tb{position:absolute;left:50px;top:566px;width:1500px;border-radius:18px;overflow:hidden}
+.tr{display:flex;min-height:82px;align-items:center;background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.12);color:#fff;font-size:26px;line-height:1.4}
+.tr>div:first-child{flex:none;width:500px;padding:10px 28px}.tr>div:last-child{flex:1;padding:10px 28px}
+.tr b{font-weight:600;display:block}.tr small{display:block;color:var(--lime);font-size:22px}
+.tr.th{min-height:52px;background:var(--lime);color:#143019;font-weight:700;border:0}
+#lang{position:fixed;right:8px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:3px;z-index:9;opacity:.45;transition:opacity .3s}
+#lang:hover{opacity:1}#lang button{width:26px;height:20px;border:1px solid rgba(255,255,255,.45);border-radius:6px;background:rgba(20,40,25,.65);color:#fff;font:600 10px var(--f);cursor:pointer;padding:0}
+#lang button.on{background:var(--lime);color:#143019;border-color:var(--lime)}
+.nd.br{padding-top:20px}
+.cam{position:absolute;z-index:3;top:9px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#14181a}
+.app{position:absolute;inset:0;display:flex;flex-direction:column;font-family:var(--f);color:#1a2a1e;background:#fff}
+.ap-h{flex:none;height:80px;padding:20px 14px 0;display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#10b455,#2ccb69);color:#fff}
+.ap-av{flex:none;width:40px;height:40px;border-radius:50%;background:#fff;text-align:center;line-height:40px;font-size:25px}
+.ap-t b{font-size:17px;font-weight:700}.ap-t u{text-decoration:none;background:#ffe27a;color:#6a4a00;font-size:10px;padding:2px 7px;border-radius:9px;font-weight:700;margin-left:4px;vertical-align:2px}.ap-t small{display:block;font-size:11.5px;opacity:.95}
+.ap-rf{margin-left:auto;width:34px;height:34px;border:2px solid rgba(255,255,255,.85);border-radius:50%;text-align:center;line-height:30px;font-size:19px}
+.ap-chat{flex:1;position:relative;overflow:hidden;background:linear-gradient(180deg,#8ca4d3,#93a9d5);transition:opacity .6s}.ap-chat.fade{opacity:0}
+.ap-msgs{position:absolute;left:0;right:0;top:0;padding:12px 12px 16px;display:flex;flex-direction:column;gap:10px;transition:transform 1s cubic-bezier(.3,.7,.2,1)}
+.m{display:none;font-size:15px;line-height:1.4}.m.in{display:block;animation:mpop .55s cubic-bezier(.3,1.4,.5,1) both}
+.m.b.in,.m.row.in{display:flex}.m.b{gap:8px;align-items:flex-start}.m.row{gap:8px;flex-wrap:wrap;margin-left:34px}.m.u{text-align:right}.m.ind{margin-left:34px}
+@keyframes mpop{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+.av{flex:none;width:26px;height:26px;border-radius:50%;background:#d9f2e0;font-size:16px;text-align:center;line-height:26px;font-style:normal}
+.note{background:#fff3cf;color:#7a5200;border-radius:12px;padding:9px 12px;font-size:13px}
+.bb{background:#fff;border-radius:6px 18px 18px 18px;padding:12px 14px;font-weight:500;max-width:312px}.bb.card{padding:14px;width:100%;max-width:none}
+.ub{display:inline-block;background:#0fbf5c;color:#fff;font-weight:700;padding:10px 16px;border-radius:16px 16px 4px 16px;text-align:left}
+.ub.doc{padding:8px;border-radius:14px}.ub.doc img{display:block;width:118px;border-radius:6px}
+.bt{display:inline-block;padding:10px 18px;border-radius:22px;background:#fff;color:#0a9a46;border:2px solid #0fbf5c;font-weight:700;font-size:14.5px;transition:transform .15s,background .15s}
+.bt.g{background:#06c755;color:#fff;border-color:#06c755}.bt.gr{color:#3b4a40;border-color:#d4dad4}.bt.press{transform:scale(.92);background:#087f3a;color:#fff}
+.ch{display:flex;align-items:center;gap:10px}.ch i{flex:none;width:40px;height:40px;border-radius:50%;background:#e4f5ea;text-align:center;line-height:40px;font-style:normal;font-size:20px}.ch b{display:block;font-size:15.5px;font-weight:700}.ch small{font-size:12px;color:#7a847c}
+.tp{margin-top:8px;background:#f0f2f0;border-radius:10px;padding:8px 12px;font-size:14px;font-weight:500}.tp b{color:#0a8a40;margin-right:10px;font-size:13px}
+.gd{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.gd div{background:#f0f2f0;border-radius:10px;padding:8px 11px;font-size:12px;color:#5d685f;line-height:1.3}.gd b{display:block;font-size:19px;color:#0a8a40;font-weight:700;margin-top:2px}.gd .w{grid-column:1/3}
+.rc{margin-top:12px;font-weight:700;font-size:14px}.rr{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#f0f2f0;border-radius:10px;padding:9px 12px;margin-top:7px;font-size:13px;font-weight:500}.rr b{color:#0a8a40;font-weight:700;white-space:nowrap}
+.cf{margin-top:10px;background:#e3f6e9;border-radius:12px;padding:10px 12px}.cf b{font-size:14px;color:#0a6e36}.cf small{display:block;font-size:11.5px;color:#4d6a56;margin-top:3px;line-height:1.35}
+.lb{color:#fff;font-weight:700;font-size:13px;line-height:26px}
+.pc{background:#fff;border-radius:14px;padding:12px 14px;font-size:14px}.pc h5{font-size:15.5px;color:#0a6e36;font-weight:700;margin-bottom:4px}.pc p{display:flex;justify-content:space-between;color:#5d685f}.pc p b{color:#1a2a1e;font-weight:500}.pc small{display:block;margin-top:6px;font-size:12px;color:#6a746c;line-height:1.35}.pc.tot{background:#e3f6e9}.pc.tot>b{font-size:17px;font-weight:700}
+.ap-in{flex:none;height:60px;background:#fff;border-top:1px solid #e3e8e3;display:flex;align-items:center;gap:10px;padding:0 12px}
+.ap-inp{flex:1;height:40px;border:1.5px solid #dde3dd;border-radius:20px;background:#f7f9f7;color:#8a948b;font-size:13.5px;line-height:37px;padding:0 14px;white-space:nowrap;overflow:hidden}
+.ap-send{width:50px;height:40px;border-radius:20px;background:#06c755;color:#fff;font-weight:700;font-size:15px;line-height:40px;text-align:center}
+.ap-menu{flex:none;display:grid;grid-template-columns:repeat(3,1fr);height:128px;border-top:1px solid #e3e8e3;background:#fff}
+.mc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-right:1px solid #e8ece8;border-bottom:1px solid #e8ece8;font-size:12px;font-weight:700;color:#24352a;text-align:center;line-height:1.2;transition:background .2s}.mc em{font-style:normal;font-size:22px}.mc.press{background:#cfeedb}
+.ring{position:absolute;left:12px;top:690px;width:100px;height:76px;border:5px solid #ff4b2b;border-radius:50%;opacity:0;pointer-events:none}
+.ring.on{opacity:1;animation:rp 1.1s ease-out infinite}.ring.press{background:rgba(255,75,43,.25)}
+@keyframes rp{0%{transform:scale(.85);box-shadow:0 0 0 0 rgba(255,75,43,.55)}70%{transform:scale(1);box-shadow:0 0 0 22px rgba(255,75,43,0)}100%{transform:scale(.85)}}
+.hand{position:absolute;left:66px;top:726px;font-size:44px;opacity:0;pointer-events:none}.hand.on{opacity:1;animation:tap 1.1s ease-in-out infinite}
+@keyframes tap{0%,100%{transform:translateY(16px)}50%{transform:translateY(0)}}
+.tip{position:absolute;left:14px;top:648px;background:#ff4b2b;color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .3s}.tip.on{opacity:1}
+.tip::after{content:"";position:absolute;left:44px;bottom:-7px;border-top:8px solid #ff4b2b;border-left:7px solid transparent;border-right:7px solid transparent}
+.col img{display:block;margin:0 auto;width:200px;height:170px;object-fit:contain}
+.on .col img{animation:icin .9s cubic-bezier(.3,1.5,.5,1) both,flt 4s ease-in-out infinite;animation-delay:calc(var(--d)*.15s + .8s),calc(var(--d)*.15s + 2s)}
+@keyframes icin{from{opacity:0;transform:scale(.4) rotate(-12deg)}to{opacity:1;transform:none}}@keyframes flt{50%{transform:translateY(-8px)}}
+a.dt{text-decoration:none;cursor:pointer;transition:filter .3s}a.dt:hover{filter:brightness(1.15) drop-shadow(0 0 24px rgba(139,212,90,.55))}
+.dt .u{position:relative;display:inline-block}
+.dt .u::after{content:"";position:absolute;left:-14px;right:-14px;bottom:26px;height:14px;border-radius:7px;background:#8bd45a;transform:scaleX(0);transform-origin:left}
+.on .dt .u::after{animation:grow .8s ease 1.3s forwards}
+.cur{position:absolute;left:823px;top:557px;z-index:6;display:block;cursor:pointer;filter:drop-shadow(0 12px 18px rgba(0,0,0,.45));transform-origin:55% 24%}
+.cur svg{display:block;overflow:visible}
+.on .cur{animation-name:pop,clickbob;animation-duration:.9s,2.6s;animation-iteration-count:1,infinite;animation-delay:calc(var(--d)*.15s + .35s),3.2s;animation-timing-function:cubic-bezier(.3,1.5,.5,1),ease-in-out}
+@keyframes clickbob{0%,60%,100%{transform:none}70%{transform:translate(-8px,-8px) scale(.94)}80%{transform:none}}
+.cur .clk{opacity:0}.on .cur .clk{animation:clk 2.6s ease-in-out infinite 3.2s}
+@keyframes clk{0%,62%{opacity:0}70%,84%{opacity:1}100%{opacity:0}}
+.cur:hover{filter:drop-shadow(0 12px 18px rgba(0,0,0,.45)) brightness(1.06)}
+.pt{position:absolute;left:0;right:0;top:340px;text-align:center;font:700 112px/1.2 var(--f);letter-spacing:.2em;color:#fff;text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:14px;padding-left:.2em;transition:color .3s}
+.pt:hover,.ck:hover{color:var(--lime)}
+.ck{position:absolute;margin:-30px 0 0 -85px;width:170px;text-align:center;color:#eef2ee;font:600 46px/1.2 var(--f);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px;white-space:nowrap;opacity:0;transition:color .3s}
+.on .ck{animation:pop .7s cubic-bezier(.3,1.5,.5,1) both,fl var(--f) ease-in-out infinite;animation-delay:calc(var(--d)*.12s + .5s),var(--o)}
+@keyframes fl{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,-14px)}}
 /* ui */
 #bar{position:fixed;left:0;top:0;height:5px;background:var(--lime);width:0;transition:width .5s;z-index:9}
 #ui{position:fixed;right:22px;bottom:18px;display:flex;gap:10px;align-items:center;z-index:9;color:#fff;font:500 15px var(--f);opacity:.55;transition:opacity .3s}
@@ -139,52 +241,67 @@ h2{font-weight:700;font-size:64px;line-height:1.1;color:var(--g);text-shadow:0 2
 <section class="s"><div class="bg" style="background-image:url(images/field.jpg)"></div><div class="abs" style="inset:0;background:rgba(240,250,235,.55)"></div>
 <img class="comic" style="left:150px;--r:-3deg;--d:0" src="images/story1.jpg" alt=""><img class="comic" style="left:590px;--r:2deg;--d:1" src="images/story2.jpg" alt=""><img class="comic" style="left:1030px;--r:-2deg;--d:2" src="images/story3.jpg" alt=""></section>
 
-<!-- 5 stats -->
-<section class="s"><div class="bg" style="background-image:url(images/stats-bg.jpg)"></div><div class="abs" style="inset:0;background:rgba(255,235,190,.25)"></div>
-<div class="stat card" style="left:290px;top:150px" data-a="pop"><b data-n="890">890</b><span>บาท/ตัน<br>ราคาอ้อย 2025/26 ลดลง 23%</span></div>
-<div class="stat card" style="left:830px;top:150px;--d:1" data-a="pop"><b data-n="1358">1,358</b><span>บาท/ตัน<br>ต้นทุนการผลิต</span></div>
-<div class="stat card" style="left:290px;top:470px;--d:2" data-a="pop"><b data-n="-4680" style="color:#b3361f">-4,680</b><span>บาท/ไร่<br>ขาดทุนโดยประมาณ</span></div>
-<div class="stat card" style="left:830px;top:470px;--d:3" data-a="pop"><b data-n="94" data-s="%">94%</b><span>ของเกษตรกรอ้อย<br>ขาดความรู้เรื่องปุ๋ย</span></div></section>
-
+<!-- 15 chart -->
+<section class="s"><div class="bg" style="background-image:url(images/stats-bg.jpg)"></div><div class="abs" style="inset:0;background:rgba(255,246,225,.55)"></div>
+<h2 class="abs" style="left:70px;top:36px;font-size:70px" data-a="l" data-en="Sugarcane Price &lt;span style=&quot;font-size:36px;font-weight:500;margin-left:14px&quot;&gt;THB per tonne&lt;/span&gt;">ราคาอ้อย <span style="font-size:36px;font-weight:500;margin-left:14px">บาทต่อตัน</span></h2>
+<div class="cp card" data-a="zoom"></div>
+<div class="gl" style="top:660px"></div><div class="gl" style="top:540px"></div><div class="gl" style="top:420px"></div><div class="gl" style="top:300px"></div><div class="gl base" style="top:778px"></div>
+<div class="bar b1" style="left:300px;--d:0"><small data-en="Approx.">ประมาณ</small><b data-n="1160">1,160</b><span data-en="THB/tonne">บาท/ตัน</span></div>
+<div class="bar b2" style="left:700px;--d:1"><small data-en="Only">เหลือเพียง</small><b data-n="890" data-t="1500">890</b><span data-en="THB/tonne">บาท/ตัน</span></div>
+<div class="yr" style="left:300px" data-a style="--d:3">2024/25</div><div class="yr" style="left:700px;--d:4" data-a>2025/26</div>
+<div class="dl"></div><div class="ar"></div>
+<div class="drop abs" style="left:1010px;top:340px;--d:15" data-a="pop"><span data-en="Down a further">ลดลงอีก</span><b data-n="23" data-s="%" data-t="3500">23%</b><em data-en="vs. 2024/25">เทียบกับปี 2024/25</em></div></section>
 <!-- 6 what is -->
 <section class="s"><div class="bg" style="background-image:url(images/what-bg.jpg)"></div><div class="abs" style="inset:0;background:rgba(255,255,255,.2)"></div>
-<h2 class="abs" style="left:70px;top:36px;font-size:58px" data-a="l">หมอดิน AI คืออะไร</h2>
-<div class="step card" style="left:260px;top:170px;--d:1" data-a="l"><em>1</em><div><strong>ถ่ายรูปใบผลแล็บ / เครื่องวัด pH</strong><small>ส่งเข้า LINE "หมอดิน AI"</small></div></div>
-<div class="step card" style="left:360px;top:341px;--d:3" data-a="r"><em>2</em><div><strong>เป้าหมาย: ให้ AI อ่านค่า</strong><small>จากเครื่องหรือผลตรวจใบตรวจดิน — ต้องทดสอบและยืนยันก่อนคำนวณ</small></div></div>
-<div class="step card" style="left:260px;top:512px;--d:5" data-a="l"><em>3</em><div><strong>แสดงแนวทางปุ๋ยที่ต้องผ่านการทวนสอบ</strong><small>สูตรเฉพาะแปลงยังต้องยืนยันกับผู้เชี่ยวชาญ</small></div></div>
-<div class="step card" style="left:360px;top:683px;--d:7" data-a="r"><em>4</em><div><strong>ภาษาชาวบ้าน + ราคาปุ๋ย + สคริปต์ร้านค้า</strong><small>+ ราคาอ้อยรายวัน/รายพื้นที่</small></div></div></section>
-
+<h2 class="abs" style="left:70px;top:36px;font-size:58px" data-a="l" data-en="What is Mor Din AI?">หมอดิน AI คืออะไร</h2>
+<div class="vline"></div>
+<div class="step card" style="top:165px;--d:1" data-a="l"><em>1</em><div><strong data-en="Photograph the lab report / pH meter">ถ่ายรูปใบผลแล็บ / เครื่องวัด pH</strong><small data-en="Send it to LINE &quot;Mor Din AI&quot;">ส่งเข้า LINE "หมอดิน AI"</small></div></div>
+<div class="step card" style="top:340px;--d:3" data-a="l"><em>2</em><div><strong data-en="Goal: let AI read the values">เป้าหมาย: ให้ AI อ่านค่า</strong><small data-en="From the meter or soil report — test &amp;amp; confirm before calculating">จากเครื่องหรือผลตรวจใบตรวจดิน — ต้องทดสอบและยืนยันก่อนคำนวณ</small></div></div>
+<div class="step card" style="top:515px;--d:5" data-a="l"><em>3</em><div><strong data-en="Show fertilizer guidance that must be verified">แสดงแนวทางปุ๋ยที่ต้องผ่านการตรวจสอบ</strong><small data-en="Plot-specific formulas still need expert confirmation">สูตรเฉพาะแปลงยังต้องยืนยันกับผู้เชี่ยวชาญ</small></div></div>
+<div class="step card" style="top:690px;--d:7" data-a="l"><em>4</em><div><strong data-en="Plain farmer language + fertilizer prices + shop scripts">ภาษาชาวบ้าน + ราคาปุ๋ย + สคริปต์ร้านค้า</strong><small data-en="+ daily / regional sugarcane prices">+ ราคาอ้อยรายวัน/รายพื้นที่</small></div></div>
+</section>
 <!-- 7 demo -->
-<section class="s" style="background:radial-gradient(circle at 50% 40%,#2c5233,#1a3120 72%)"><div class="grid"></div>
+<section class="s" id="demo" style="background:radial-gradient(circle at 50% 40%,#2c5233,#1a3120 72%)"><div class="grid"></div>
 <div class="abs" style="right:40px;top:40px;display:flex;gap:10px"><i style="width:18px;height:18px;border-radius:50%;background:#8aa88c"></i><i style="width:18px;height:18px;border-radius:50%;background:#8aa88c"></i><i style="width:18px;height:18px;border-radius:50%;background:#8aa88c"></i></div>
-<div class="dt" style="left:0;width:600px;text-align:right" data-a="l">DE</div><div class="dt" style="left:1000px" data-a="r">MO</div>
-<div class="phone" data-a="up" style="--d:1"><div class="notch"></div><div class="pscreen"><div class="lh">หมอดิน AI</div><div class="bub me" style="--d:0"><div class="photo"></div>ใบผลตรวจดิน</div><div class="bub ai" style="--d:1">กำลังอ่านค่า…</div><div class="bub ai" style="--d:2">อ่านค่าได้แล้ว กรุณายืนยันค่าก่อนคำนวณ</div><div class="bub me" style="--d:3">ถูกต้อง</div><div class="bub ai" style="--d:4">แนวทางปุ๋ยและราคาโดยประมาณพร้อมแล้ว</div></div></div></section>
+<a class="dt" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" aria-label="DEMO" style="left:0;width:570px;text-align:right" data-a="l"><span class="u">DE</span></a><a class="dt" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" aria-label="DEMO" style="left:1030px" data-a="r"><span class="u">MO</span></a>
+<div class="phone" data-a="up" style="--d:1"><i class="cam"></i><div class="app">
+<div class="ap-h"><div class="ap-av">🧑‍🌾</div><div class="ap-t"><b><span data-en="Mor Din AI">หมอดิน AI</span> <u data-en="Sample data">ข้อมูลตัวอย่าง</u></b><small data-en="Sugarcane farmer’s assistant">ผู้ช่วยเกษตรกรปลูกอ้อย</small></div><div class="ap-rf">↻</div></div>
+<div class="ap-chat"><div class="ap-msgs" id="msgs"><div class="m note in"><span data-en="Mor Din AI: the AI&amp;#39;s reading accuracy has not yet been tested against a set of soil analysis reports. Results are guidance only.">หมอดินเอไอ: ความแม่นยำในการอ่านของเอไอยังไม่ได้ทดสอบกับชุดใบวิเคราะห์ดินทดสอบ ผลที่ได้เป็นเพียงแนวทาง</span></div><div class="m b in"><i class="av">🧑‍🌾</i><div class="bb"><span data-en="Choose a button below to begin: send a soil analysis photo or type the soil values yourself (type &amp;quot;restart&amp;quot; anytime)">เลือกปุ่มด้านล่างเพื่อเริ่ม: ส่งรูปใบวิเคราะห์ดิน หรือพิมพ์ค่าดินเอง (พิมพ์ &quot;เริ่มใหม่&quot; ได้ทุกเมื่อ)</span></div></div><div class="m row in"><span class="bt g" data-en="Send soil analysis photo">ส่งรูปใบวิเคราะห์ดิน</span><span class="bt " data-en="Type soil values">พิมพ์ค่าดินเอง</span></div><div class="m u r" data-k="2"><span class="ub" data-en="📷 Photo of lab report">📷 ถ่ายรูปใบผลแล็บ</span></div><div class="m b r" data-k="3"><i class="av">🧑‍🌾</i><div class="bb card"><div class="ch"><i>📷</i><div><b data-en="Photo of lab report">ถ่ายรูปใบผลแล็บ</b><small data-en="Frame the photo clearly before sending">จัดรูปให้ชัดก่อนส่ง</small></div></div><div class="tp"><b>01</b><span data-en="Place the report on a well-lit table">วางใบบนโต๊ะที่มีแสงสว่าง</span></div><div class="tp"><b>02</b><span data-en="Shoot straight on, showing the whole page">ถ่ายตรง ๆ ให้เห็นทั้งหน้าเอกสาร</span></div><div class="tp"><b>03</b><span data-en="Check the numbers aren’t blurry or glared">เช็กว่าตัวเลขไม่เบลอหรือมีแสงสะท้อน</span></div></div></div><div class="m row r" data-k="4"><span id="b4" class="bt g" data-en="📷 Choose photo from device">📷 เลือกรูปจากเครื่อง</span></div><div class="m u r" data-k="5"><span class="ub doc"><img src="images/lab-report.jpg" alt=""></span></div><div class="m b r" data-k="6"><i class="av">🧑‍🌾</i><div class="bb"><span data-en="Photo received. Reading the values, one moment…">ได้รับรูปแล้ว กำลังอ่านค่า รอสักครู่</span></div></div><div class="m ind r" data-k="7"><div class="bb card"><div class="ch"><i>📋</i><div><b data-en="Values read from the soil analysis">ค่าที่อ่านได้จากใบวิเคราะห์ดิน</b><small data-en="Read by AI · please verify before use">อ่านโดยเอไอ · ตรวจทานก่อนใช้</small></div></div><div class="gd"><div><span data-en="Organic matter (OM) %">อินทรียวัตถุ (OM) %</span><b>1.2</b></div><div><span data-en="Phosphorus (P) mg/kg">ฟอสฟอรัส (P) มก./กก.</span><b>8</b></div><div><span data-en="Potassium (K) mg/kg">โพแทสเซียม (K) มก./กก.</span><b>45</b></div><div><span data-en="Calcium (Ca) mg/kg">แคลเซียม (Ca) มก./กก.</span><b>600</b></div><div><span data-en="Magnesium (Mg) mg/kg">แมกนีเซียม (Mg) มก./กก.</span><b>80</b></div><div><span data-en="Soil pH">ค่าความเป็นกรดด่าง (pH)</span><b>5.7</b></div><div class="w"><span data-en="Soil texture">เนื้อดิน</span><b><span data-en="Sandy loam">ร่วนทราย</span></b></div></div>
+<div class="rc"><span data-en="Fertilizer recommended by the report">ปุ๋ยที่ใบวิเคราะห์แนะนำ</span></div>
+<div class="rr"><span data-en="Urea (46-0-0)">ยูเรีย (46-0-0)</span><b><span data-en="20.98 kg/rai">20.98 กก./ไร่</span></b></div><div class="rr"><span data-en="Potassium chloride (0-0-60)">โพแทสเซียมคลอไรด์ (0-0-60)</span><b><span data-en="12 kg/rai">12 กก./ไร่</span></b></div>
+<div class="cf">✅ <b data-en="Are the values correct?">ค่าที่อ่านได้ถูกต้องไหมครับ?</b><small data-en="These values were read by AI and may be wrong. Please compare with your soil analysis before confirming.">ค่าเหล่านี้อ่านโดยเอไอ อาจผิดพลาดได้ กรุณาเทียบกับใบวิเคราะห์ของคุณก่อนกดยืนยัน</small></div></div></div><div class="m row r" data-k="8"><span id="b8" class="bt g" data-en="Confirm">ยืนยัน</span><span class="bt gr" data-en="Edit">แก้ไข</span><span class="bt gr" data-en="Cancel">ยกเลิก</span></div><div class="m u r" data-k="9"><span class="ub" data-en="Confirm">ยืนยัน</span></div><div class="m b r" data-k="10"><i class="av">🧑‍🌾</i><div class="bb"><span data-en="How large is your plot? Just type, e.g. &amp;quot;5&amp;quot; or &amp;quot;5 rai&amp;quot; or &amp;quot;3 rai 2 ngan&amp;quot; or &amp;quot;3 rai 2 ngan 50 sq.wah&amp;quot; or &amp;quot;2 hectares&amp;quot; (a bare number counts as rai)">แปลงของคุณมีขนาดเท่าไร? พิมพ์ได้เลย เช่น &quot;5&quot; หรือ &quot;5 ไร่&quot; หรือ &quot;3 ไร่ 2 งาน&quot; หรือ &quot;3 ไร่ 2 งาน 50 ตารางวา&quot; หรือ &quot;2 เฮกตาร์&quot; (ถ้าพิมพ์แค่ตัวเลข จะนับเป็นไร่)</span></div></div><div class="m u r" data-k="11"><span class="ub" data-en="5 rai">5 ไร่</span></div><div class="m note r" data-k="12"><span data-en="Noted: 5 rai = 5 rai">รับทราบ 5 ไร่ = 5 ไร่</span></div><div class="m b r" data-k="13"><i class="av">🧑‍🌾</i><div class="lb" data-en="Plan for 5.0 rai">แผนสำหรับ 5.0 ไร่</div></div><div class="m ind r" data-k="14"><div class="pc "><h5 data-en="Urea (46-0-0)">ยูเรีย (46-0-0)</h5><p><span data-en="Per rai">ต่อไร่</span><b><span data-en="20.98 kg">20.98 กก.</span></b></p><p><span data-en="Total">รวม</span><b><span data-en="104.9 kg">104.9 กก.</span></b></p><p><span data-en="Estimated price">ราคาโดยประมาณ</span><b><span data-en="2098 THB">2098 บาท</span></b></p><small data-en="Supplies nitrogen, helping cane stalks and leaves grow">ให้ธาตุไนโตรเจน ช่วยให้ต้นและใบอ้อยเจริญเติบโต</small></div></div><div class="m ind r" data-k="15"><div class="pc "><h5 data-en="Potassium chloride (0-0-60)">โพแทสเซียมคลอไรด์ (0-0-60)</h5><p><span data-en="Per rai">ต่อไร่</span><b><span data-en="12.0 kg">12.0 กก.</span></b></p><p><span data-en="Total">รวม</span><b><span data-en="60.0 kg">60.0 กก.</span></b></p><p><span data-en="Estimated price">ราคาโดยประมาณ</span><b><span data-en="1440 THB">1440 บาท</span></b></p><small data-en="Supplies potassium, helping the cane store sugar">ให้ธาตุโพแทสเซียม ช่วยให้ลำอ้อยสะสมน้ำตาล</small></div></div><div class="m ind r" data-k="16"><div class="pc tot"><h5 data-en="Estimated total price">ราคารวมโดยประมาณ</h5><b><span data-en="3538 THB">3538 บาท</span></b></div></div><div class="m row r" data-k="17"><span class="bt " data-en="Copy table text">คัดลอกข้อความตาราง</span></div></div></div>
+<div class="ap-in"><div class="ap-inp" data-en="Type a message or ask Mor Din...">พิมพ์ข้อความ หรือถามหมอดิน...</div><div class="ap-send" data-en="Send">ส่ง</div></div>
+<div class="ap-menu"><div class="mc" id=mc1><em>📷</em><span data-en="Photo of lab report">ถ่ายรูปใบผลแล็บ</span></div><div class="mc"><em>📟</em><span data-en="Photo of pH meter">ถ่ายรูปเครื่องวัด pH</span></div><div class="mc"><em>📊</em><span data-en="Today’s cane price">ราคาอ้อยวันนี้</span></div><div class="mc"><em>✏️</em><span data-en="Type values yourself">พิมพ์ค่าด้วยตัวเอง</span></div><div class="mc"><em>❓</em><span data-en="How to use">วิธีใช้งาน</span></div><div class="mc"><em>💬</em><span data-en="Ask Mor Din">ถามหมอดิน</span></div></div>
+<div class="ring" id="ring"></div><div class="tip" id="tip" data-en="Tap here">กดที่นี่</div><div class="hand" id="hand">👆</div>
+</div></div><a class="cur" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" aria-label="Open the demo" data-a="pop" style="--d:12"><svg viewBox="-14 -14 56 66" width="240" height="283"><g class="clk" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M9 3L3 -3M14.5 0L13 -8.5M5 9L-3 7.5"/></g><path class="hd" d="M14 8C14 4.5 15.5 2 17.5 2C19.5 2 21 4.5 21 8L21 17C21 15 22.5 14 24 14C25.5 14 27 15 27 17L27 19C27 17.5 28.3 16.5 30 16.5C31.7 16.5 33 17.5 33 19.5L33 21.5C33 20 34.2 19 36 19C37.8 19 39 20.2 39 22L39 32C39 38 36 41 33 43L33 47L19 47L19 43C16 40 11 34 8 30C6.5 28 7 26 9 25.5C11 25 13 26.5 14 28.5Z" fill="#fff" stroke="#111" stroke-width="1.3" stroke-linejoin="round"/><path d="M21 20V27M27 21V27M33 23V28" stroke="#111" stroke-width="1.1" stroke-linecap="round" fill="none"/></svg></a>
+</section>
 <!-- 8 strengths -->
 <section class="s"><div class="bg" style="background-image:url(images/strengths-bg.jpg)"></div>
-<h2 class="abs" style="left:0;right:0;top:60px;text-align:center;font-size:80px" data-a="zoom">จุดแข็ง</h2>
-<div class="col card" style="left:95px" data-a><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="38" rx="4"/><path d="M16 6V4h16v2M15 20h18M15 28h18M15 36h10"/></svg><p>อ่านใบผลตรวจดิน<br>จากรูปภาพให้อัตโนมัติ</p></div>
-<div class="col card" style="left:465px;--d:1" data-a><svg viewBox="0 0 48 48"><path d="M12 8h24l4 34H8z"/><path d="M16 8c0-3 3-4 8-4s8 1 8 4M17 26h14M17 33h14"/></svg><p>แนะนำสูตรปุ๋ยเฉพาะแปลง ด้วยภาษาชาวบ้านที่เข้าใจง่าย</p></div>
-<div class="col card" style="left:835px;--d:2" data-a><svg viewBox="0 0 48 48"><path d="M6 8h36v24H20l-8 8v-8H6z"/><path d="M14 17h20M14 24h12"/></svg><p>มีราคาปุ๋ยโดยประมาณ พร้อมคำพูดสำหรับบอกร้านค้า และราคาอ้อยรายวัน</p></div>
-<div class="col card" style="left:1205px;--d:3" data-a><svg viewBox="0 0 48 48"><path d="M24 44V22M24 30c-9 0-13-5-13-13 9 0 13 4 13 13zM24 26c0-8 4-12 13-11 0 9-4 12-13 11z"/></svg><p>เปิดกว้างให้เกษตรกรรายย่อย เข้าถึงได้ง่ายทุกคน</p></div></section>
+<h2 class="abs" style="left:0;right:0;top:60px;text-align:center;font-size:80px" data-a="zoom" data-en="Strengths">จุดแข็ง</h2>
+<div class="col card" style="left:95px" data-a><img src="images/icon-clipboard.webp" alt=""><p data-en="Automatically reads soil test reports&lt;br&gt;from photos">อ่านใบผลตรวจดิน<br>จากรูปภาพให้อัตโนมัติ</p></div>
+<div class="col card" style="left:465px;--d:1" data-a><img src="images/icon-npk.webp" alt=""><p data-en="Recommends plot-specific fertilizer formulas in plain, easy-to-understand language">แนะนำสูตรปุ๋ยเฉพาะแปลง ด้วยภาษาชาวบ้านที่เข้าใจง่าย</p></div>
+<div class="col card" style="left:835px;--d:2" data-a><img src="images/icon-people.webp" alt=""><p data-en="Includes estimated fertilizer prices, a script to tell the shop, and daily sugarcane prices">มีราคาปุ๋ยโดยประมาณ พร้อมคำพูดสำหรับบอกร้านค้า และราคาอ้อยรายวัน</p></div>
+<div class="col card" style="left:1205px;--d:3" data-a><img src="images/icon-farmer.webp" alt=""><p data-en="Open to smallholder farmers — easy for everyone to access">เปิดกว้างให้เกษตรกรรายย่อย เข้าถึงได้ง่ายทุกคน</p></div></section>
 
 <!-- 14 arch -->
 <section class="s" style="background:radial-gradient(circle at 70% 30%,#2c5233,#18301d 75%)"><div class="grid"></div>
-<h2 class="abs" style="left:70px;top:50px;font-size:70px;color:#fff;text-shadow:none" data-a="l">Technical Architecture</h2><div class="uline"></div>
-<div class="flow">
-<div class="ac" style="width:330px" data-a><h3>ช่องทางติดต่อผู้ใช้</h3><div class="tag">Frontend &amp; Messaging</div><span class="chip">LINE Messaging API</span><span class="chip">Amazon API Gateway</span><p>LINE เชื่อมต่อผ่าน Amazon API Gateway</p></div>
-<div class="ln" style="--d:2"><i></i></div>
-<div class="ac" style="width:290px;--d:3" data-a><h3>การประมวลผลและตรรกะหลัก</h3><div class="tag">Serverless Compute</div><span class="chip">AWS Lambda</span></div>
-<div class="ln" style="--d:5"><i></i></div>
-<div class="ac" style="width:340px;--d:6" data-a><h3>การอ่านค่าจากรูปภาพและสร้างคำแนะนำ</h3><div class="tag">AI &amp; Foundation Models</div><span class="chip">Amazon Textract</span><span class="chip">Amazon Bedrock (Multimodal LLM)</span></div>
-<div class="ln" style="--d:8"><i></i></div>
-<div class="ac" style="width:440px;--d:9" data-a><h3>การจัดเก็บข้อมูลและไฟล์ภาพ</h3><div class="tag">Storage &amp; Database</div><span class="chip">Amazon S3</span><p>เก็บไฟล์รูปถ่ายใบตรวจดินที่เกษตรกรส่งเข้ามาชั่วคราวอย่างปลอดภัย</p><span class="chip">Amazon DynamoDB</span><p>เก็บสถานะการสนทนา (Session State) ระหว่างรอยืนยันตัวเลข ฐานข้อมูลสูตรแม่ปุ๋ย และประวัติการวิเคราะห์รายแปลง</p></div>
-</div></section>
+<h2 class="abs" style="left:70px;top:36px;font-size:62px;color:#fff;text-shadow:none" data-a="l">Technical Architecture</h2><div class="uline" style="top:118px"></div>
+<div class="nd " style="left:72px;top:150px;width:300px;height:160px;--d:0" data-a="pop"><b class=n>1</b><h3 data-en="Farmer (LINE)">เกษตรกร (LINE)</h3><small data-en="User">ผู้ใช้งาน</small></div><div class="nd " style="left:457px;top:150px;width:300px;height:160px;--d:2" data-a="pop"><b class=n>2</b><h3>API Gateway + Lambda</h3><small data-en="(LINE signature check)">(ตรวจลายเซ็น LINE)</small></div><div class="nd " style="left:842px;top:150px;width:300px;height:160px;--d:4" data-a="pop"><b class=n>3</b><h3>AgentCore Runtime</h3><small data-en="(the app)">(ตัวแอป)</small></div><div class="nd " style="left:1227px;top:150px;width:300px;height:160px;--d:6" data-a="pop"><b class=n>4</b><h3>Amazon Bedrock</h3><small>(Claude Sonnet)</small></div>
+<div class="hl" style="left:372px;top:228px;width:85px;--d:1"><i></i></div><div class="hl" style="left:757px;top:228px;width:85px;--d:3"><i></i></div><div class="hl" style="left:1142px;top:228px;width:85px;--d:5"><i></i></div>
+<div class="vl" style="left:990px;top:310px;height:48px;--d:8"><i></i></div><div class="hb" style="left:820px;top:356px;width:344px;--d:9"></div><div class="vl" style="left:820px;top:358px;height:42px;--d:10"><i></i></div><div class="vl" style="left:1162px;top:358px;height:42px;--d:10"><i></i></div>
+<div class="nd br" style="left:664px;top:402px;width:316px;height:96px;--d:11" data-a="pop"><h3 data-en="Fertilizer calculation code">โค้ดคำนวณปุ๋ย</h3></div><div class="nd br" style="left:1004px;top:402px;width:316px;height:96px;--d:12" data-a="pop"><h3 data-en="Supabase database">ฐานข้อมูล Supabase</h3></div>
+<div class="abs tt" style="left:50px;top:520px;--d:13" data-a="l" data-en="AWS services &amp;amp; roles">บริการ AWS และหน้าที่</div><div class="tb"><div class="tr th" style="--d:14" data-a><div data-en="Service">บริการ</div><div data-en="Role">หน้าที่</div></div><div class="tr" style="--d:15" data-a><div><b>Amazon Bedrock</b><small>(Claude Sonnet, ap-southeast-1)</small></div><div data-en="Reads soil analysis report and pH meter photos, writes explanations and fertilizer-purchase scripts, answers chat">อ่านรูปใบวิเคราะห์ดินและเครื่องวัด pH, เขียนคำอธิบายและสคริปต์ซื้อปุ๋ย, ตอบแชต</div></div><div class="tr" style="--d:16" data-a><div><b>AgentCore Runtime</b></div><div data-en="Runs the app serverless, scaling automatically with users">รันตัวแอปแบบ serverless ขยายเองตามผู้ใช้</div></div><div class="tr" style="--d:17" data-a><div><b>API Gateway + Lambda</b></div><div data-en="Receives LINE webhooks and verifies signatures">รับ webhook จาก LINE และตรวจลายเซ็น</div></div></div></section>
 <!-- 13 thank you -->
 <section class="s"><div class="bg" style="background-image:url(images/sky.jpg)"></div><div class="cloud" style="animation-delay:-10s"></div>
 <div class="abs ty" style="left:0;right:0;top:20px;text-align:center" data-a="zoom">THANK YOU</div>
 <img class="farm" src="images/farmers.webp" alt="" style="animation-delay:.5s">
 <div class="abs by" style="right:50px;bottom:34px" data-a style="--d:6">BY TUPPY LUCKY</div></section>
+<!-- 16 prototype -->
+<section class="s" style="background:radial-gradient(circle at 50% 50%,#274a2f,#1b3321 75%)"><div class="grid"></div>
+<a class="pt" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-a="zoom">Prototype!</a>
+<a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:749px;top:57px;--d:2;--f:3.0s;--o:0.0s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:1422px;top:119px;--d:3;--f:3.6s;--o:-0.7s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:235px;top:184px;--d:4;--f:4.2s;--o:-1.4s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:967px;top:198px;--d:5;--f:4.8s;--o:-2.1s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:554px;top:271px;--d:6;--f:3.0s;--o:-2.8s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:1351px;top:314px;--d:7;--f:3.6s;--o:-3.5s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:107px;top:370px;--d:8;--f:4.2s;--o:-4.2s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:1399px;top:588px;--d:9;--f:4.8s;--o:-4.9s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:828px;top:625px;--d:10;--f:3.0s;--o:-5.6s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:266px;top:687px;--d:11;--f:3.6s;--o:-6.3s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:1145px;top:743px;--d:12;--f:4.2s;--o:-7.0s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:611px;top:792px;--d:13;--f:4.8s;--o:-7.7s">คลิกที่นี่</a><a class="ck" href="https://linevv8cak.execute-api.ap-southeast-1.amazonaws.com/" target="_blank" rel="noopener" data-en="Click here" style="left:1430px;top:810px;--d:14;--f:3.0s;--o:-8.4s">คลิกที่นี่</a></section>
 </div>
+<div id="lang"><button data-l="th">TH</button><button data-l="en">EN</button></div>
 <div id="ui"><span id="cnt"></span><button id="pv" aria-label="ก่อนหน้า">‹</button><button id="nx" aria-label="ถัดไป">›</button><button id="fs" aria-label="เต็มจอ">⤢</button></div>
 <script>
 const st=document.getElementById('stage'),S=[...st.querySelectorAll('.s')];let cur=-1;
@@ -193,11 +310,30 @@ addEventListener('resize',fit);fit();
 function count(el){const n=+el.dataset.n,p=el.dataset.p||'',s=el.dataset.s||'',t0=performance.now(),D=1800;
  (function f(t){const k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);el.textContent=p+Math.round(n*e).toLocaleString('en-US')+s;if(k<1)requestAnimationFrame(f)})(t0)}
 function go(i){i=Math.max(0,Math.min(S.length-1,i));if(i===cur)return;if(cur>=0)S[cur].classList.remove('on');cur=i;S[i].classList.add('on');
- S[i].querySelectorAll('[data-n]').forEach(e=>{e.textContent=(e.dataset.p||'')+'0'+(e.dataset.s||'');setTimeout(()=>count(e),900)});
- document.getElementById('bar').style.width=((i+1)/S.length*100)+'%';document.getElementById('cnt').textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1))}
+ S[i].querySelectorAll('[data-n]').forEach(e=>{e.textContent=(e.dataset.p||'')+'0'+(e.dataset.s||'');setTimeout(()=>count(e),+e.dataset.t||900)});
+ dmCtl(S[i]);document.getElementById('bar').style.width=((i+1)/S.length*100)+'%';document.getElementById('cnt').textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1))}
 addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','PageDown','Enter'].includes(e.key)){e.preventDefault();go(cur+1)}else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].includes(e.key))go(cur-1);else if(e.key==='Home')go(0);else if(e.key==='End')go(S.length-1);else if(e.key==='f'||e.key==='F')tf()});
 function tf(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
 pv.onclick=()=>go(cur-1);nx.onclick=()=>go(cur+1);fs.onclick=tf;
 let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(cur+(d<0?1:-1));x0=null});
+
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-en]').forEach(e=>{if(!('th' in e.dataset))e.dataset.th=e.innerHTML;e.innerHTML=l==='en'?e.dataset.en:e.dataset.th});
+ document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));document.title=l==='en'?'mor din — Mor Din AI | Pitch':'mor din — หมอดิน AI | Pitch';try{localStorage.setItem('lang',l)}catch(e){}}
+document.querySelectorAll('#lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)b.blur()});
+addEventListener('keydown',e=>{if(e.key==='l'||e.key==='L')setLang(document.documentElement.lang==='en'?'th':'en')});
+let sl='th';try{sl=localStorage.getItem('lang')||'th'}catch(e){}setLang(sl);
+
+const DM={t:[]},$i=i=>document.getElementById(i);
+function dmFit(){const c=document.querySelector('.ap-chat'),m=$i('msgs');m.style.transform='translateY('+Math.min(0,c.clientHeight-m.offsetHeight)+'px)'}
+function dmReset(){DM.t.forEach(clearTimeout);DM.t=[];document.querySelectorAll('#msgs .r').forEach(e=>e.classList.remove('in'));['ring','hand','tip'].forEach(i=>$i(i).classList.remove('on'));document.querySelectorAll('#demo .press').forEach(e=>e.classList.remove('press'));
+ const m=$i('msgs');m.style.transition='none';m.style.transform='none';void m.offsetHeight;m.style.transition='';document.querySelector('.ap-chat').classList.remove('fade')}
+function dmPlay(){dmReset();const show=k=>{document.querySelector('#msgs [data-k="'+k+'"]').classList.add('in');dmFit()},
+ prs=(id,ms)=>{const e=$i(id);e.classList.add('press');setTimeout(()=>e.classList.remove('press'),ms)},
+ hint=on=>['ring','hand','tip'].forEach(i=>$i(i).classList[on?'add':'remove']('on'));
+ const sc=[[1800,()=>hint(true)],[4400,()=>{prs('mc1',600);prs('ring',600)}],[5000,()=>{hint(false);show(2)}],[6200,()=>show(3)],[8600,()=>show(4)],[9800,()=>prs('b4',500)],[10400,()=>show(5)],[11800,()=>show(6)],[13200,()=>show(7)],[16200,()=>show(8)],[17600,()=>prs('b8',500)],[18000,()=>show(9)],[19200,()=>show(10)],[21400,()=>show(11)],[22400,()=>show(12)],[23400,()=>show(13)],[23900,()=>show(14)],[25600,()=>show(15)],[27600,()=>show(16)],[28800,()=>show(17)],
+ [33000,()=>document.querySelector('.ap-chat').classList.add('fade')],[33800,dmPlay]];
+ sc.forEach(([ms,f])=>DM.t.push(setTimeout(f,ms)))}
+function dmCtl(el){el.id==='demo'?dmPlay():dmReset()}
 go((parseInt(location.hash.slice(1))||1)-1);
 </script></body></html>
